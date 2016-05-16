@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="es" data-ng-app="appDemo">
+<head>
+    <meta charset="utf-8">
+    <title>Mantenimiento de empleados</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
+    <script src="app.js"></script>
+    <script type="text/javascript">
+       $(document).ready(function() {
+          $('select').material_select();
+          $('.datepicker').pickadate({
+            selectMonths: true, // Creates a dropdown to control month
+            selectYears: 5 // Creates a dropdown of 15 years to control year
+          });
+        });
+    </script>
+    <style type="text/css">
+      
+      input.ng-valid {
+        border-bottom: 1px solid rgba(0,200,0,0.7)!IMPORTANT;
+      }
+
+      input.ng-dirty.ng-invalid {
+        border-bottom: 1px solid rgba(200,0,0,0.7)!IMPORTANT;
+        box-shadow:0 1px 0 0 rgb(200, 0, 0) !IMPORTANT;
+      }
+
+      input[type=text].ng-dirty.ng-invalid+label, input[type=email].ng-dirty.ng-invalid+label {
+        color:rgba(200,0,0,0.7)!IMPORTANT;        
+      }
+
+      input[type=text].ng-dirty.ng-valid+label {
+        color:rgba(0,200,0,0.7)!IMPORTANT;        
+      }
+    </style>
+</head>
+<body data-ng-cloak data-ng-controller="controlador">
+  <div class="row">
+    <div class="col s12 l4 push-l4 card-panel">
+        <form name="frmRegistro" novalidate data-ng-submit="registrar(formData)">
+          <div class="row">
+            <div class="col s12 l12">
+              <h1>Registro</h1>
+            </div>
+            <div class="col s12 l12">
+              <blockquote id="msg">
+              </blockquote>
+            </div>
+            <div class="input-field col s12 l12">
+              <input class="validate"data-ng-model="formData.Nombre" type="text" name="Nombre" required>
+              <label for="Nombre">Nombre <span ng-show="frmRegistro.Nombre.$invalid && frmRegistro.Nombre.$dirty" class="" style="float:right; padding-right:25px">Es requerido</span></label>
+            </div>
+            <div class="input-field col s12 l12">
+              <input class="validate"data-ng-model="formData.Apellido" type="text" name="Apellido" required>
+              <label for="Apellido">Apellido <span ng-show="frmRegistro.Apellido.$invalid && frmRegistro.Apellido.$dirty" class="" style="float:right; padding-right:25px">Es requerido</span></label>
+            </div>
+            <div class="input-field col s12 l12">              
+              <select data-ng-model="formData.Sexo" name="Sexo" required>
+                <option value="">Seleccione</option>
+                <option value="1">Hombre</option>
+                <option value="2">Mujer</option>
+              </select>
+              <label for="Sexo">Sexo <span ng-show="frmRegistro.Sexo.$invalid && frmRegistro.Sexo.$dirty" class="" style="float:right; padding-right:25px">Es requerido</span></label>
+            </div>
+            <div class="input-field col s12 l12">
+              <input class="validate"data-ng-model="formData.Sueldo" type="text" name="Sueldo" required>
+              <label for="Sueldo">Sueldo <span ng-show="frmRegistro.Sueldo.$invalid && frmRegistro.Sueldo.$dirty" class="" style="float:right; padding-right:25px">Es requerido</span></label>
+            </div>
+            <div class="input-field col s12 l12">              
+              <select data-ng-model="formData.Profesion_id" name="Profesion_id" required>
+                <option value="" disabled selectProfesion_ided>Seleccione</option>
+                <option value="1">Abogado</option>
+                <option value="2">Soldador</option>
+              </select>
+              <label for="Profesion_id">Profesión<span ng-show="frmRegistro.Profesion_id.$invalid && frmRegistro.Profesion_id.$dirty" class="" style="float:right; padding-right:25px">Es requerido</span></label>
+            </div>
+            <div class="input-field col s12 l12">
+              <input class="datepicker"data-ng-model="formData.FechaNacimiento" type="date" name="FechaNacimiento">
+              <label for="FechaNacimiento">Fecha de Nacimiento <span ng-show="frmRegistro.FechaNacimiento.$invalid && frmRegistro.FechaNacimiento.$dirty" class="" style="float:right; padding-right:25px">Es requerido</span></label>
+            </div>
+            <div>
+              <button class="btn waves-effect waves-light" type="submit" name="action">Enviar
+              </button>
+            </div>
+          </div>        
+        </form>
+    </div>
+  </div>
+</body>
+</html>
