@@ -21,20 +21,25 @@
       
       input.ng-valid {
         border-bottom: 1px solid rgba(0,200,0,0.7)!IMPORTANT;
-        background: #ff0000;
+        background: #00ff00;
+        color: red;
       }
 
       input.ng-dirty.ng-invalid {
         border-bottom: 1px solid rgba(200,0,0,0.7)!IMPORTANT;
         box-shadow:0 1px 0 0 rgb(200, 0, 0) !IMPORTANT;
+        background: #00ff00;
+        color: red;
       }
 
       input[type=text].ng-dirty.ng-invalid+label, input[type=email].ng-dirty.ng-invalid+label {
-        color:rgba(200,0,0,0.7)!IMPORTANT;        
+        color:rgba(200,0,0,0.7)!IMPORTANT;
+        background: #00ff00;        
       }
 
       input[type=text].ng-dirty.ng-valid+label {
-        color:rgba(0,200,0,0.7)!IMPORTANT;        
+        color:rgba(0,200,0,0.7)!IMPORTANT;
+        background: #00ff00;        
       }
     </style>
 </head>
@@ -46,6 +51,7 @@
           <div class="row">
             <div class="col s12 l12">
               <h1>Registro Fomrulario</h1>
+              <h2>Bienvenido</h2>
             </div>
             <div class="col s12 l12">
               <blockquote id="msg">
