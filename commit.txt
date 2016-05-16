@@ -1,0 +1,11 @@
+commit 5d3f92681f0e392b2dc94d9a051129635a15fbd4
+Author: jankarlos <jankarlos.diaz@gmail.com>
+Date:   Sun May 15 20:45:05 2016 -0500
+
+    Termino de modificar
+
+commit f6feae06dfce984443b4771800ff8b4ae55593c2
+Author: jankarlos <jankarlos.diaz@gmail.com>
+Date:   Sun May 15 20:40:49 2016 -0500
+
+    Iniciamos
